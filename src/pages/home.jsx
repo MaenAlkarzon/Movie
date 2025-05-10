@@ -1,4 +1,3 @@
-// src/pages/Home.js
 export default function Home() {
     return (
       <div className="text-center p-5">
