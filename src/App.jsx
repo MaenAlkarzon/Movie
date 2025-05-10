@@ -1,24 +1,28 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import MyNavbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Movies from "./pages/Movies1";
+import MovieDetails from "./pages/MoviesDetails";
 
-import Navbar from './components/Navbar';
-import footer from './components/footer';
-import home from './pages/home';
-import movies from './pages/movies';
- 
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 function App() {
   return (
-    <Router>
-      <Navbar />
+    <BrowserRouter>
+      <MyNavbar />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movies" element={<Movies />} />
+          <Route path="/movies/:id" element={<MovieDetails />} />
         </Routes>
       </main>
       <Footer />
-    </Router>
+    </BrowserRouter>
   );
 }
- 
+
 export default App;
